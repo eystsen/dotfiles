@@ -27,7 +27,7 @@ shopt -s checkwinsize
 
 # Git branch name
 function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n2) != "nothing to commit" ]] && echo "*"
+  [[ $(git status 2> /dev/null | tail -n2) != "nothing to commit, working tree clean" ]] && echo "*"
 }
 
 function parse_git_branch {
