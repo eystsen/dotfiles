@@ -1,7 +1,8 @@
-if [ -n "$TMUX" ]; then
+#if [ -n "$TMUX" ]; then
     # called inside tmux session, do tmux things
-    . ~/.profile
+#    . ~/.profile
 
-fi
+
+#fi
 # Trigger ~/.bashrc commands
 . ~/.bashrc
