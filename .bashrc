@@ -27,11 +27,12 @@ shopt -s checkwinsize
 
 # Git branch name
 function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n2) != "nothing to commit, working tree clean" ]] && echo "*"
+  [[ $(git status -s 2> /dev/null | tail -n1) ]] && echo "*"
 }
 
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+#  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1]/"
 }
 
 # If set, the pattern "**" used in a pathname expansion context will
