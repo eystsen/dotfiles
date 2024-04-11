@@ -74,6 +74,9 @@ else
     PS1='┌──[\u@\h]-[\w]\n└──╼ \$ '
 fi
 
+# fix dark blue directory color to something bright
+LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
+
 # Set 'man' colors
 if [ "$color_prompt" = yes ]; then
 	man() {
